@@ -1,7 +1,13 @@
+body {
+  background-color: #f8f8f8;
+  justify-content: center;
+  margin: 0;
+  padding: 30px 0;
+  display: flex;
+}
+
 .cards {
   grid-template-columns: repeat(4, 220px);
-  justify-content: center;
-  align-items: center;
   gap: 15px;
   max-width: 1200px;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   height: 290px;
-  padding-top: 10px;
+  transition: transform .5s ease-in-out;
   display: flex;
   position: relative;
 }
@@ -32,5 +38,60 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
+}
+
+.picture__rank {
+  color: #8b0000;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  display: flex;
+  position: absolute;
+  top: 85px;
+  right: 10px;
+}
+
+.details {
+  text-align: center;
+  line-height: 25px;
+}
+
+.details .name {
+  color: #2f4f4f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.details__extra {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.cards__card:hover {
+  z-index: 10;
+  background-color: #eee;
+  border-radius: 10px;
+  width: 220px;
+  height: 290px;
+  transition: all 1s;
+  transform: scale(1.1);
+}
+
+.cards__card:hover .details__extra {
+  visibility: visible;
+  opacity: 1;
+}
+
+.picture img {
+  transition: border-radius 1s ease-in-out;
+}
+
+.cards__card:hover .picture img {
+  border-radius: 15%;
 }
 /*# sourceMappingURL=html-practice-apr25.b1276d39.css.map */

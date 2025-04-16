@@ -1,8 +1,15 @@
+body {
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   
+   padding: 30px 0;
+   background-color: #f8f8f8;
+ }
+
 .cards {
    display: grid;
    grid-template-columns: repeat(4, 220px);
-   justify-content: center;
-   align-items: center;
 
    font-family: Arial, Helvetica, sans-serif;
    max-width: 1200px;
@@ -13,9 +20,10 @@
       flex-direction: column;
       align-items: center;
 
-      padding-top: 10px;
       height: 290px;
       position: relative;
+
+      transition: transform 0.5s ease-in-out;
    }
 }
 
@@ -34,4 +42,62 @@
       border-radius: 50%;
       object-fit: cover;
    }
+
+   &__rank {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      position: absolute;
+      top: 85px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-weight: bold;
+      color: #8B0000;
+      background-color: #f8f8f8;
+   }
+ }
+
+ .details {
+   text-align: center;
+   line-height: 25px;
+
+   .name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2F4F4F;
+   }
+
+   &__extra {
+      visibility: hidden;
+      opacity: 0;
+
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+   }
+ }
+
+ .cards__card:hover {
+   background-color: #EEEEEE;
+   height: 290px;
+   width: 220px;
+   border-radius: 10px;
+
+   transition: 1s;
+   transform: scale(1.1);
+   z-index: 10;
+
+   .details__extra {
+      visibility: visible;
+      opacity: 1;
+   }
+ }
+
+ .picture img {
+   transition: border-radius 1s ease-in-out;;
+ }
+
+ .cards__card:hover .picture img {
+   border-radius: 15%;
  }
